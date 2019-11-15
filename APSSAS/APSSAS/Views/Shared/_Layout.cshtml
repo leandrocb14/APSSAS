@@ -9,9 +9,9 @@
     @RenderSection("CssHead")
 </head>
 <body>
-    @if (!ViewData.ModelState.IsValid)
+    @if(TempData["ThrownException"] != null)
     {
-        <span>Erro</span>
+    <span>@TempData["ThrownException"]</span>
     }
     @Html.ValidationMessage("ThrownException")
     @RenderBody()

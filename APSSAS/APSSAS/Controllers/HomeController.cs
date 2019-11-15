@@ -34,7 +34,7 @@ namespace APSSAS.Controllers
                 else
                     processo = Processo.Decrypt.Description().ToLower();
 
-                ModelState.AddModelError("ThrownException", string.Format("Falha ao tentar {0} o arquivo.", processo));
+                TempData["ThrownException"] = string.Format("Falha ao tentar {0} o arquivo.", processo);
                 return RedirectToAction("Index");
             }
             
