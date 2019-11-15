@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/Default")
+    @Scripts.Render("~/Scripts/modernizr")
+    @RenderSection("CssHead")
+</head>
+<body>
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <span>Erro</span>
+    }
+    @Html.ValidationMessage("ThrownException")
+    @RenderBody()
+
+    @Scripts.Render("~/Scripts/Default")
+    @RenderSection("ScriptFooter")
+</body>
+</html>

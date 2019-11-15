@@ -1,0 +1,24 @@
+﻿@section CssHead{
+    @Styles.Render("~/Content/Home")
+}
+
+@model APSSAS.Models.UploadFileViewModel
+<h2>Criptografia e descriptografia de arquivos</h2>
+
+@using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="container-chave">
+        @Html.LabelFor(m => m.Chave, string.Format("{0}: ", nameof(Model.Chave)))
+        @Html.TextBox(nameof(Model.Chave))
+    </div>
+    @Html.LabelFor(m => m.Processo, string.Format("{0}: ", nameof(Model.Processo)))
+    @Html.DropDownListFor(m => m.Processo, Model.ListaProcessos)
+    @Html.LabelFor(m => m.TipoCriptografia, "Tipo Criptografia: ")
+    @Html.DropDownListFor(m => m.TipoCriptografia, Model.ListaTiposCriptografia)
+    <input type="file" name="@nameof(Model.File)" id="@nameof(Model.File)" />
+    <input type="submit" value="Enviar" id="BtnSubmit" />
+}
+
+@section ScriptFooter{
+    @Scripts.Render("~/Scripts/Home")
+}
