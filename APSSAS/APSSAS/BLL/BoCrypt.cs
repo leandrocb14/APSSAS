@@ -27,7 +27,7 @@ namespace APSSAS.BLL
             else if (pCriptografia == Criptografia.DES)
                 return EncryptProvider.DESEncrypt(pBytesFile, BuildKey(pChave, 24));
             else
-                return Convert.FromBase64String(EncryptProvider.AESEncrypt(Convert.ToBase64String(pBytesFile), pChave));
+                return Convert.FromBase64String(EncryptProvider.AESEncrypt(Convert.ToBase64String(pBytesFile), BuildKey(pChave, 32)));
         }
 
         private byte[] RealizarDecryptPorTipoCriptografia(byte[] pBytesFile, Criptografia pCriptografia, string pChave)
