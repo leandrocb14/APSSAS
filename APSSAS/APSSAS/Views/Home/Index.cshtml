@@ -3,20 +3,27 @@
 }
 
 @model APSSAS.Models.UploadFileViewModel
-<h2>Criptografia e descriptografia de arquivos</h2>
+<p class="header">Criptografia e descriptografia de arquivos</p>
 
 @using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <div id="container-chave">
-        @Html.LabelFor(m => m.Chave, string.Format("{0}: ", nameof(Model.Chave)))
-        @Html.TextBox(nameof(Model.Chave))
+
+    <div class="campo">
+        <span id="container-chave">
+            @Html.LabelFor(m => m.Chave, string.Format("{0}: ", nameof(Model.Chave)))
+            @Html.TextBox(nameof(Model.Chave))
+        </span>
+
+        @Html.LabelFor(m => m.Processo, string.Format("{0}: ", nameof(Model.Processo)))
+        @Html.DropDownListFor(m => m.Processo, Model.ListaProcessos)
+        @Html.LabelFor(m => m.TipoCriptografia, "Tipo Criptografia: ")
+        @Html.DropDownListFor(m => m.TipoCriptografia, Model.ListaTiposCriptografia)
+        <input class="inputArquivo" type="file" name="@nameof(Model.File)" id="@nameof(Model.File)" />
     </div>
-    @Html.LabelFor(m => m.Processo, string.Format("{0}: ", nameof(Model.Processo)))
-    @Html.DropDownListFor(m => m.Processo, Model.ListaProcessos)
-    @Html.LabelFor(m => m.TipoCriptografia, "Tipo Criptografia: ")
-    @Html.DropDownListFor(m => m.TipoCriptografia, Model.ListaTiposCriptografia)
-    <input type="file" name="@nameof(Model.File)" id="@nameof(Model.File)" />
-    <input type="submit" value="Enviar" id="BtnSubmit" />
+    <input class="botao" type="submit" value="Enviar" id="BtnSubmit" />
+
+
+
 }
 
 @section ScriptFooter{

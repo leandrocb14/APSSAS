@@ -1,3 +1,42 @@
 ﻿.container-chave-visible {
     display: none;
 }
+body {
+    text-align: center;
+    color: white;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    background-image: url("https://www.eff.org/files/banner_library/defend-encryption-cyan-1_0.png");
+}
+.inputArquivo {
+    display: initial !important;
+}
+.header {
+    font-size: 50px;
+    margin-bottom: 3%;
+}
+.campo {
+    margin-bottom: 1em;
+}
+.campo label {
+    margin-bottom: 0.2em;
+}
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    background: #FFC;
+}
+.botao {
+    font-size: 1.5em;
+    border: 0;
+    margin-bottom: 1em;
+    color: forestgreen;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    margin-left: 50px;
+}
+.botao {
+    cursor: pointer;
+    margin: 5px 5px 5px 630px;
+}
+
+
+
