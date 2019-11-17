@@ -29,6 +29,7 @@ function CarregaEventos() {
 }
 
 function VerificaAtivacaoCampoChave() {
+    varsConst.ChaveTextBox.val("");
     if (varsConst.TipoCriptografiaDropDown.val() === varsConst.AESValue || varsConst.TipoCriptografiaDropDown.val() === varsConst.DESValue) {
         varsConst.ChaveContainer.removeClass("container-chave-visible");
         if (varsConst.TipoCriptografiaDropDown.val() === varsConst.AESValue)
